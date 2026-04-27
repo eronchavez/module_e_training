@@ -1,0 +1,314 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+
+
+img,video{
+    max-width: 100%;
+    height: auto;
+}
+
+
+h2
+{
+    font-size: 3em;
+    text-align: center;
+}
+
+h1{
+    font-size: 1em;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container
+{
+    margin: 0 15%;
+    width: 70%;
+}
+
+li{
+    list-style-type: none ;
+}
+
+a
+{
+    text-decoration: none;
+}
+
+header .container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2em 0;
+}
+
+/* Header */
+
+header
+{
+    background-color: white;
+
+}
+
+header li
+{
+    display: block;
+    width: 200px;
+    text-align: right;
+}
+
+
+header ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*Call To Action*/
+
+#callToAction
+{
+    background-image: url(../images/cover.jpg);
+    background-size: cover;
+    height: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#cto
+{
+    background: white;
+    padding: 2em 3em;
+    border-radius: 15px;
+    text-align: center;
+}
+
+/* Map Attractions */
+
+#map h2{
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+#map .container{
+    background-image: url(../images/lyon-map.jpg);
+    background-size: cover;
+    display: flex;
+    height: 850px;
+}
+
+.mapAttractions
+{
+    width: 50%;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 3rem;
+    padding: 3em;
+}
+
+ 
+.mapAttractions .attractionCard
+{
+    background-color: white;
+    padding: 2em 1em;
+}
+
+.mapMarkers
+{
+    position: relative;
+    width: 50%;
+    height: 100%;
+}
+
+.mapMarkers .marker
+{   
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    background-color: rgb(194, 25, 25);
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(-45deg);
+    
+}
+
+.mapMarkers span
+{
+    transform: rotate(+45deg);
+    
+}
+
+.marker:nth-child(1)
+{
+    top: 70%;
+    left: 10%;
+}
+
+.marker:nth-child(2)
+{
+    top: 90%;
+    left: 70%;
+}
+
+.marker:nth-child(3)
+{
+    top: 70%;
+    left: 50%;
+}
+
+
+/* Video */
+video{
+    padding: 4em 0;
+    width: 100%;
+}
+
+/* Essential Info and Latest Events */
+
+
+#essentialNlatest .container
+{
+    display: flex;
+}
+
+.essentialInfo, .latestEvents
+{
+    width: 50%;
+   
+}
+
+.eventsContainer figure{
+    min-width: 300px;
+}
+
+
+
+.eventsContainer {
+    display: flex;
+    overflow-x: auto;
+    margin: 0;
+    padding: 2em;
+    
+}
+
+.essentialInfo a{
+    background-color: rgb(32, 32, 143);
+    color: white;
+    padding: 1em;
+    border-radius: 5px;
+    text-align: center;
+    width: 200px;
+} 
+
+.essentialInfo
+{
+    display: flex ;
+    flex-direction: column;
+    gap: 1em;
+    font-size: 1.3em;
+}
+
+/* Other Information */
+
+#otherInformation
+{
+    padding: 4em;
+}
+
+
+/* Contact Us */
+
+#contactInfo
+{
+    border: 1px solid black;
+    height: 500px;
+}
+
+#contactInfo form{
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr 3fr;
+    gap: 2em;
+    padding: 2em;
+    padding-top: 10em;
+}
+
+#contactInfo h2{
+    border: 1px solid gray;
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2em; 
+    margin-left: 15em;
+    margin-top: -1em;
+    background-color: white;
+    
+  
+}
+
+/* Footer */
+
+
+footer
+{
+    margin-top: 4em;
+    padding-top: 4em;
+    background-color: rgba(128, 128, 128, 0.216);
+
+}
+footer ul{
+    display: grid;
+    
+}
+
+footer p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer a
+{
+    color: gray;
+    font-size: 1.5em;
+    gap: 10px;
+}
+
+/* 
+footer nav{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(3,1fr);   
+    gap: 10px;
+justify-items: start;
+    align-items: start;
+} */
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    grid-template-rows: repeat(3, auto);  
+    gap: 15px;
+    text-align: center;
+    padding-bottom: 5em;
+   
+}
+
+
+
+.footer-grid a {
+    display: block;
+    padding: 5px 0;
+}
+

@@ -1,0 +1,137 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+img, video
+{
+    max-width: 100%;
+    height: auto;
+}
+
+header, footer{
+    width: 100%;
+}
+
+.container
+{
+    margin: 0 15%;
+    width: 70%;
+}
+
+body
+{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+li
+{
+    list-style-type: none;
+}
+
+a
+{
+    text-decoration: none;
+}
+
+h1{
+    font-size: 1em;
+}
+
+h2{
+    font-size: 3em;
+}
+
+
+/* Header */
+header
+{
+    background-color: white;
+}
+
+header .container
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5em 0;
+}
+
+header ul{
+    display: flex;
+}
+
+header a{
+    display: block;
+    width: 150px;
+    text-align: right;
+    padding: 1em;
+}
+
+
+/* Call To Action */
+#callToAction
+{
+    background-image: url(../images/cover.jpg);
+    background-size: cover;
+    height: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#cto
+{
+    width: 20%;
+    background: white;
+    padding: 2em 3em;
+    border-radius: 15px;
+
+}
+
+
+/* Map Attraction */
+
+
+#map
+{
+    padding: 4em 0 3em 0;
+}
+
+#map h2{
+    margin-bottom: 1em;
+}
+
+#map .container
+{
+    height: 600px;
+    background-image: url(../images/lyon-map.jpg);
+    background-size: cover;
+    display: flex;
+}
+
+#attractions
+{
+    width: 50%;
+    padding: 3em;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 3em;
+}
+
+.attractionCard
+{
+    background-color: white;
+    padding: 0.5em;
+}
+
+#mapMarkers
+{
+    position: relative;
+    width: 50%;
+    height: 100%;
+}

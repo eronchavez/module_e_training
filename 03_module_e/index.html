@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module E</title>
+    <link rel="stylesheet" href="main/style.css">
+</head>
+<body>
+
+    <header>
+       <div class="container">
+            <h1>WELCOME LYON</h1>
+            <nav>
+                <ul>
+                    <li><a href="">link</a></li>
+                    <li><a href="">link</a></li>
+                    <li><a href="">link</a></li>
+                </ul>
+            </nav>
+       </div>
+    </header>
+
+    <main>
+        <section id="callToAction">
+            <div id="cto">
+                <div></div>
+                Call To Action
+            </div>
+        </section>
+
+        <section id="map">
+            <h2>Map Attractions</h2>
+            <div class="container">
+                <div class="mapAttractions">
+                    <figure class="attractionCard">
+                        <picture>
+                            <source media="(min-width: 760px)" srcset="/images/attraction-a.jpg">
+                            <img src="/images/attraction-a-low-res.jpg" alt="Parc de la Tete d'Or">
+                        </picture>
+                        <figcaption>Parc de la Tete d'Or</figurecaption>
+                    </figure>
+                    <figure class="attractionCard">
+                        <picture>
+                            <source media="(min-width: 760px)" srcset="/images/attraction-b.jpg">
+                            <img src="/images/attraction-b-low-res.jpg" alt="Street">
+                        </picture>
+                        <figcaption>Street</figurecaption>
+                    </figure>
+                    <figure class="attractionCard">
+                        <picture>
+                            <source media="(min-width: 760px)" srcset="/images/attraction-c.jpg">
+                            <img src="/images/attraction-c-low-res.jpg" alt="River">
+                        </picture>
+                        <figcaption>River</figurecaption>
+                    </figure>
+                    <figure class="attractionCard">
+                        <picture>
+                            <source media="(min-width: 760px)" srcset="/images/all-attractions.jpg">
+                            <img src="/images/all-attractions-low-res.jpg" alt="All Attractions">
+                        </picture>
+                        <figcaption>All Attractions</figurecaption>
+                    </figure>
+                </div>
+
+                <div class="mapMarkers">
+                    <div class="marker"><span>A</span></div>
+                    <div class="marker"><span>B</span></div>
+                    <div class="marker"><span>C</span></div>
+                </div>
+            </div>
+        </section>
+
+
+        <video src="/video/lyon.mp4" controls></video>
+
+        <section id="essentialNlatest">
+          <div class="container">
+                  <div class="essentialInfo">
+                    <h2>Essential <br> Information</h2>
+                    <address>
+                        <p>Contact: 04 72 10 30 30</p>
+                        <p>Mairie deLyon, 69205 Lyon cedex 01</p>
+                    </address>
+                    <a href="">Read It Loud</a>
+                 </div>
+            <div class="latestEvents">
+                <h2>Latest Events</h2>
+                    <div class="eventsContainer">
+                        <figure>
+                            <picture>
+                                <source media="(min-width: 760px)" srcset="/images/latest-events-images/worldskills-2024-p.jpg">
+                                <img src="/images/latest-events-images/worldskills-2024-p-low-res.png" alt="Lyon accueille la finale mondiale des Worldskills 2024">
+                            </picture>
+                            <figcaption>Lyon accueille la finale mondiale des Worldskills 2024</figcaption>
+                        </figure>
+                        <figure>
+                            <picture>
+                                <source media="(min-width: 760px)" srcset="/images/latest-events-images/fda-p.jpg">
+                                <img src="/images/latest-events-images/fda-p-low-res.jpg" alt="Forum des associations 2024">
+                            </picture>
+                            <figcaption>Forum des associations 2024</figcaption>
+                        </figure>
+                        <figure>
+                            <picture>
+                                <source media="(min-width: 760px)" srcset="/images/latest-events-images/lyon-kayak-p-0.jpg">
+                                <img src="/images/latest-events-images/lyon-kayak-p-0-low-res.jpg" alt="Lyon Kayak">
+                            </picture>
+                            <figcaption>Lyon Kayak</figcaption>
+                        </figure>
+                        <figure>
+                            <picture>
+                                <source media="(min-width: 760px)" srcset="/images/latest-events-images/semaine-bleue-2024-p.jpg">
+                                <img src="/images/latest-events-images/semaine-bleue-2024-p-low-res.jpg" alt="La semaine bleue 2024">
+                            </picture>
+                            <figcaption>La semaine bleue 2024</figcaption>
+                        </figure>
+                        <figure>
+                            <picture>
+                                <source media="(min-width: 760px)" srcset="images/latest-events-images/village-des-metiers-p.jpg">
+                                <img src="images/latest-events-images/village-des-metiers-p-low-res.jpg" alt="Le Village des Métiers">
+                            </picture>
+                            <figcaption>Le Village des Métiers</figcaption>
+                        </figure>
+                        <figure>
+                            <picture>
+                                <source media="(min-width: 760px)" srcset="/images/latest-events-images/journees_portes_ouvertes_entreprises_2023_p.jpg">
+                                <img src="/images/latest-events-images/journees_portes_ouvertes_entreprises_2023_p-low-res.jpg" alt="Les Journées Portes Ouvertes des Entreprises">
+                            </picture>
+                            <figcaption>Les Journées Portes Ouvertes des Entreprises</figcaption>
+                        </figure>
+                    </div>
+            </div>
+          </div>
+        </section>
+
+
+
+        <section id="otherInformation">
+            <h2>Other Information</h2>
+            <!-- <tab>Tab 1</tab>
+            <tab>Tab 2</tab>
+            <tab>Tab 3</tab> -->
+        </section>
+
+
+        <section id="contactInfo" class="container">
+            <h2>Contact us</h2>
+            <form action="" method="post">
+                <label for="firstName">First name</label>
+                <input type="text" name="firstName" id="firstName">
+                <label for="lastName">Last name</label>
+                <input type="text" name="lastName" id="lastName">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email">
+                <label for="phone">Phone</label>
+                <input type="tel" name="phone" id="phone">
+            </form>
+        </section>
+
+
+        <footer>
+            <nav>
+                <ul class="footer-grid">
+                    <li><a href="">About Us</a></li>
+                    <li><a href="">Getting here</a></li>
+                    <li><a href="">FAQs</a></li>
+
+                    <li><a href="">Places to Stay</a></li>
+                    <li><a href="">Things to Do</a></li>
+                    <li><a href="">Events Calendar</a></li>
+
+                    <li><a href="">Restaurant</a></li>
+                    <li><a href="">Nightlife</a></li>
+                    <li><a href="">Shopping</a></li>
+
+                    <li><a href="">Plan Your Trip</a></li>
+                    <li><a href="">Contact Us</a></li>
+                    <li><a href="">Newsletter Signup</a></li>
+                </ul>
+            </nav>
+            <p>&copy;2024, All Right Reserved.</p>
+        </footer>
+
+    </main>
+    
+</body>
+</html>

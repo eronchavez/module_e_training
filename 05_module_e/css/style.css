@@ -1,0 +1,623 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+<<<<<<< HEAD
+=======
+
+>>>>>>> fefcca7b49e0b11542f68b190c262250a087a744
+}
+
+h2
+{
+    text-align: center;
+<<<<<<< HEAD
+=======
+
+>>>>>>> fefcca7b49e0b11542f68b190c262250a087a744
+}
+
+h1
+{
+    font-size: 1em;
+}
+
+<<<<<<< HEAD
+=======
+
+>>>>>>> fefcca7b49e0b11542f68b190c262250a087a744
+li
+{
+    list-style-type: none;
+}
+
+a
+{
+    text-decoration: none;
+}
+
+body
+{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container
+{
+<<<<<<< HEAD
+    width: 80%;
+    margin: 0 auto;
+}
+
+img,video
+{
+=======
+    width: 80%; /* Adjust this number to your liking */
+    margin: 0 auto;    /* This centers the content */
+   
+}
+
+img,video{
+>>>>>>> fefcca7b49e0b11542f68b190c262250a087a744
+    width: 100%;
+    height: auto;
+}
+
+<<<<<<< HEAD
+section:not(#callToAction), footer
+{
+    padding: 4em 0;
+}
+
+:root
+{
+    --gradient: conic-gradient(
+        from 0deg at 17% -2%,
+        #ff5a00ff
+        #fab691ff
+        #e8f647ff
+    );
+
+    --mouse-x: 50%;
+    --mouse-y: 50%;
+    --start: 0;
+}
+
+/* Header */
+header
+{
+    width: 100%;
+    padding: 1em 0;
+    background-color: rgba(255, 255, 255, 0.5);
+    position: sticky;
+    top: 0;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 3px rgba(0,0,0,0.3);
+=======
+
+section:not(#callToAction), footer {
+    padding: 4em 0;
+}
+
+/* Header */
+header{
+    width: 100%;
+    padding: 1em 0;
+    background-color:   rgba(255,255,255,0.5);
+    position: sticky;
+    top: 0;
+    backdrop-filter:  blur(5px);
+    box-shadow: 0 0 3px rgba(0,0,0,0.3);
+    
+>>>>>>> fefcca7b49e0b11542f68b190c262250a087a744
+}
+
+header .container
+{
+    display: flex;
+    justify-content: space-between;
+<<<<<<< HEAD
+    padding: 1em 0;
+  
+}
+
+header ul{
+=======
+    align-items: center;
+
+}
+
+header  ul{
+>>>>>>> fefcca7b49e0b11542f68b190c262250a087a744
+    display: flex;
+    gap: 5em;
+}
+
+<<<<<<< HEAD
+/* Call To action */
+#callToAction
+{
+    background-image: url('/images/cover.jpg');
+=======
+header a{
+    text-align: right;
+}
+
+/* Call To Action */
+#callToAction
+{
+    background-image: url(../images/cover.jpg);
+>>>>>>> fefcca7b49e0b11542f68b190c262250a087a744
+    background-size: cover;
+    height: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#cto
+{
+    padding: 2em;
+    background-color: white;
+    border-radius: 5px;
+    position: relative;
+<<<<<<< HEAD
+}
+
+/* #cto::before
+{
+=======
+    
+}
+
+#cto::before{
+>>>>>>> fefcca7b49e0b11542f68b190c262250a087a744
+    width: 100%;
+    height: 100%;
+    content: "";
+    position: absolute;
+    left: 50%;
+<<<<<<< HEAD
+    top: 50%;
+=======
+    top: 50%;  
+>>>>>>> fefcca7b49e0b11542f68b190c262250a087a744
+    border-radius: 5px;
+    border: 4px solid transparent;
+    background: var(--gradient);
+    background-attachment: fixed;
+<<<<<<< HEAD
+    mask: linear-gradient(#0000,#0000), conic-gradient(from calc(var(--start) - (20*1.1) * 1deg), rgba(255,255,255,0.122) 0deg,white,rgba(255,255,255,0) 100);
+=======
+    mask: linear-gradient(#0000,#0000), conic-gradient(from calc((
+        var(--start) - (20*1.1)) * 1deg), rgba(255, 255, 255, 0.122) 0deg,white,rgba(255, 255, 255, 0) 100deg);
+>>>>>>> fefcca7b49e0b11542f68b190c262250a087a744
+    mask-composite: intersect;
+    mask-clip: padding-box, border-box;
+    transform: translate(-50%,-50%);
+    opacity: 0;
+    transition: 0.5s ease;
+
+}
+
+#mask
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    background-color: rgba(0,0,0,0.3);
+    mask: radial-gradient(
+        circle at var(--mouse-x) var(--mouse-y),
+<<<<<<< HEAD
+        transparent 30px,
+        rgba(0,0,0,0.3) 60px
+=======
+        transparent 30px, 
+        rgba(0,0,0, 0.3) 60px
+>>>>>>> fefcca7b49e0b11542f68b190c262250a087a744
+    );
+    z-index: 2;
+    opacity: 0;
+}
+
+<<<<<<< HEAD
+#cto:hover::before
+{
+=======
+
+#cto:hover::before{
+>>>>>>> fefcca7b49e0b11542f68b190c262250a087a744
+    opacity: 1;
+}
+
+#cto:hover #mask
+{
+    opacity: 1;
+}
+<<<<<<< HEAD
+
+#cto:hover
+{
+    transform: scale(1.05);
+} */
+
+
+
+
+focus, .attractionCard:hover, .eventsCard figure:hover
+=======
+#cto:hover 
+{
+    transform: scale(1.05);
+}
+/* Map Attraction */
+/* Map markers: Relative */
+/* marker: Absolute */
+
+.focus, .attractionCard:hover, .eventsCard figure:hover
+>>>>>>> fefcca7b49e0b11542f68b190c262250a087a744
+{
+    transform: scale(1.05);
+    box-shadow: 0 5px 5px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease-in-out;
+    overflow: hidden;
+}
+
+
+.attractionCard:hover::before, .eventsCard figure:hover::before
+{
+    content: "";
+    position: absolute;
+    top: -10%;
+    left: -60%;
+    width: 50%;
+    height: 120%;
+    background: linear-gradient(0deg,rgba(255,255,255,0) 0%,rgba(255,255,255,0.48) 35%, rgba(255,255,255,0.90) 80%);
+    transform: rotate(15deg);
+    animation: shine 0.4s ease-in-out;
+}
+
+@keyframes shine {
+    from 
+    {
+        left: -70%;
+    }
+    to
+    {
+        left: 100%;
+    }
+}
+
+
+<<<<<<< HEAD
+
+
+
+
+#mapAttraction
+=======
+#mapAttractions
+>>>>>>> fefcca7b49e0b11542f68b190c262250a087a744
+{
+    padding: 4em;
+}
+
+<<<<<<< HEAD
+#mapAttraction h2
+{
+    padding-bottom: 2em;
+}
+
+#mapAttraction .container
+{
+    background-image: url(../images/lyon-map-low-res.jpg);
+    height: 700px;
+    display: flex;
+}
+
+.container #cards, .mapMarkers
+=======
+#mapAttractions h2{
+    padding-bottom: 2em;
+}
+
+#mapAttractions .container
+{
+    background-image: url(../images/lyon-map-low-res.jpg);
+    height: 600px;
+    display: flex;
+    
+}
+
+.container #cards,.mapMarkers
+>>>>>>> fefcca7b49e0b11542f68b190c262250a087a744
+{
+    width: 50%;
+}
+
+#cards
+{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+<<<<<<< HEAD
+    gap: 2em;;
+=======
+    gap: 2em;
+>>>>>>> fefcca7b49e0b11542f68b190c262250a087a744
+    padding: 2em 0 2em 2em;
+}
+
+#cards .attractionCard
+{
+    background-color: white;
+    padding: 1em;
+}
+
+<<<<<<< HEAD
+
+=======
+>>>>>>> fefcca7b49e0b11542f68b190c262250a087a744
+.mapMarkers
+{
+    position: relative;
+}
+
+.mapMarkers .marker
+{
+    background-color: red;
+    width: 30px;
+    height: 30px;
+<<<<<<< HEAD
+    border-radius:  50% 50% 50% 0;
+=======
+    border-radius: 50% 50% 50% 0;
+>>>>>>> fefcca7b49e0b11542f68b190c262250a087a744
+    transform: rotate(-45deg);
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+<<<<<<< HEAD
+.mapMarkers span
+{
+    display: block;
+    transform: rotate(45deg);
+}
+
+.mapMarkers .marker:nth-child(2)
+{
+    top: 50%;
+    left: 10%;
+}
+
+.mapMarkers .marker:nth-child(1)
+{
+    top: 90%;
+    left: 30%;
+}
+.mapMarkers .marker:nth-child(1)
+{
+    top: 70%;
+    left: 70%;
+}
+
+/* Essential and Information */
+=======
+
+.mapMarkers span{
+    display: block;
+    transform: rotate(45deg);
+   
+}
+
+
+
+
+.mapMarkers .marker:nth-child(1)
+{   
+
+    top: 80%;
+    left: 20%;
+}
+.mapMarkers .marker:nth-child(2)
+{   
+
+    top: 90%;
+    left: 70%;
+}
+.mapMarkers .marker:nth-child(3)
+{   
+
+    top: 10%;
+    left: 90%;
+}
+
+
+
+
+/*Essential and Information*/
+
+>>>>>>> fefcca7b49e0b11542f68b190c262250a087a744
+#essentialNevents
+{
+    padding: 4em;
+    display: flex;
+<<<<<<< HEAD
+}
+
+=======
+    
+}
+/* Dont forget this  */
+>>>>>>> fefcca7b49e0b11542f68b190c262250a087a744
+#essentialNevents .essentialInfo, .latestEvents
+{
+    width: 50%;
+}
+
+#essentialNevents .essentialInfo
+{
+    display: flex;
+    flex-direction: column;
+    line-height: 2em;
+}
+
+#essentialNevents #readLoud
+{
+    background-color: rgb(50, 50, 243);
+    color: white;
+    padding: 1em;
+    text-align: center;
+    border-radius: 5px;
+    width: 200px;
+}
+
+<<<<<<< HEAD
+=======
+
+>>>>>>> fefcca7b49e0b11542f68b190c262250a087a744
+.latestEvents .eventsCard
+{
+    display: flex;
+    flex-direction: row;
+<<<<<<< HEAD
+    overflow-x: auto;
+}
+
+.eventsCard figure{
+    min-width: 300px;
+    padding: 1em;
+    border: 1px solid black;
+    background-color: white;
+    border-radius: 10px;
+    margin: 0.5em;
+
+}
+
+
+/* Other Information */
+=======
+     overflow-x: auto;
+}
+
+.eventsCard figure{
+     min-width: 300px;
+     padding: 1em;
+     border: 1px solid black;
+     background-color: white;
+     border-radius: 10px;
+}
+
+/* Other Info */
+>>>>>>> fefcca7b49e0b11542f68b190c262250a087a744
+#otherInfo
+{
+    padding: 4em;
+}
+
+/* Contact Form */
+<<<<<<< HEAD
+#contactForm h2
+{
+    border: 1px solid gray;
+    background-color: white;
+=======
+#contactForm h2 {
+    border: 1px solid gray;
+    background: white;
+>>>>>>> fefcca7b49e0b11542f68b190c262250a087a744
+    width: 300px;
+    padding: 1em 1em;
+    margin: auto;
+    position: relative;
+    z-index: 5;
+    top: 1.2em;
+    text-align: center;
+}
+
+<<<<<<< HEAD
+#contactForm form 
+{
+=======
+#contactForm form {
+>>>>>>> fefcca7b49e0b11542f68b190c262250a087a744
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr 3fr;
+    border: 1px solid gray;
+    line-height: 2em;
+    gap: 2em;
+    padding: 4em 2em 2em;
+}
+
+<<<<<<< HEAD
+
+/* Footer */
+
+
+footer
+{
+
+    border-top: 1px solid rgb(129,129,129);
+    padding: 4em;
+    background-color: rgb(177,175,175);
+    
+}
+
+footer a
+{
+    color: rgb(82,80,80);
+=======
+/* Footer */
+
+footer
+{   
+    border-top: 1px solid  rgb(129, 129, 129);
+    padding: 4em;
+    background-color: rgb(177, 175, 175);
+}
+
+footer a{
+    color: rgb(82, 80, 80);
+>>>>>>> fefcca7b49e0b11542f68b190c262250a087a744
+    line-height: 2em;
+}
+
+footer nav
+{
+    display: flex;
+    gap: 2em;
+    justify-content: space-between;
+}
+
+<<<<<<< HEAD
+footer p
+{
+    text-align: center;
+}
+=======
+
+footer p{
+    text-align: center;
+}
+
+/* CSS EFFECTS */
+
+:root
+{
+    --gradient: conic-gradient(
+        from 0deg at 17% -2%,
+        #ff5a00ff 100%,
+        #fab691ff 75%,
+        #e8f647ff 40%
+    );
+
+    --mouse-x: 50%;
+    --mouse-y: 50%;
+    --start: 0;
+}
+>>>>>>> fefcca7b49e0b11542f68b190c262250a087a744
