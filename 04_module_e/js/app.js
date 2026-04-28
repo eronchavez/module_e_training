@@ -77,3 +77,97 @@ document.getElementById("readLoud").addEventListener('click', (e) => {
     speech.lang = "fr-FR";
     window.speechSynthesis.speak(speech);
 });
+
+
+// Reviews
+
+let allReviews = [];
+let currentReviewIndex = 0;
+
+async function loadReviews()
+{
+    const reviewContainer = document.getElementById('review_slides'); //select id = review_slides
+
+    //retrieve reviews from json file
+    const res = await fetch("review.json");
+    const data = await res.json();
+    allReviews = data.reviews;
+
+    allReviews.forEach(review => {
+        const reviewCard = document.createElement("div"); //Create DIV
+        reviewCard.classList.add("review_card"); // Add class to that DIV
+        const filledStars = "⭐".repeat(review.rating); // Add stars based on review.rating(number)
+
+        reviewCard.innerHTML =  `
+            <p class="review_rating">
+                ${filledStars}
+            </p>
+            <q class="review_content">${review.content}</q>
+            <p class="review_author"> ${review.author}</p>
+        `;
+
+        reviewContainer.appendChild(reviewCard);
+    });
+}
+
+function updateReviewSlider() {
+    const cards = document.querySelectorAll("#review_slides .review_card");
+
+    cards.forEach((card, index) => {
+        card.classList.remove("is-left", "is-center", "is-right", "is-hidden");
+
+        if(index === currentReviewIndex) {
+            card.classList.add("is-center");
+        } else if(index === currentReviewIndex - 1) {
+            card.classList.add("is-left");
+        } else if(index === currentReviewIndex + 1) {
+            card.classList.add("is-right");
+        } else {
+            card.classList.add("is-hidden");
+        }
+    }); 
+
+    const prevBtn = document.getElementById("reviewsPrevBtn");
+    const nextBtn = document.getElementById("reviewsNextBtn");
+
+    if(prevBtn && nextBtn) {
+        prevBtn.disabled = currentReviewIndex === 0;
+        nextBtn.disabled = currentReviewIndex === cards.length - 1;
+    }
+
+}
+
+function bindReviewControls() {
+    const prevBtn = document.getElementById("reviewsPrevBtn");
+    const nextBtn = document.getElementById("reviewsNextBtn");
+
+    if(!prevBtn || !nextBtn) {
+        return;
+    }
+
+    prevBtn.addEventListener("click", () => {
+        if(currentReviewIndex > 0) {
+            currentReviewIndex -= 1;
+            updateReviewSlider();
+        }
+    });
+
+    nextBtn.addEventListener("click", () => {
+        const cards = document.querySelectorAll('#review_slides .review_card');
+        if(currentReviewIndex < cards.length - 1) {
+            currentReviewIndex += 1;
+            updateReviewSlider();
+        }
+    });
+} 
+
+
+
+
+(async function init(){
+    await loadReviews();
+    bindReviewControls();
+    updateReviewSlider();
+})();
+
+

@@ -1,87 +1,72 @@
-*
-{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
 }
 
-h2
-{
+h2 {
     text-align: center;
-
 }
 
-h1
-{
+h1 {
     font-size: 1em;
 }
 
-
-li
-{
+li {
     list-style-type: none;
 }
 
-a
-{
+a {
     text-decoration: none;
 }
 
-body
-{
+body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.container
-{
-    width: 80%; /* Adjust this number to your liking */
-    margin: 0 auto;    /* This centers the content */
-   
+.container {
+    width: 80%;
+    margin: 0 auto;
 }
 
-img,video{
+img, video {
     width: 100%;
     height: auto;
 }
-
 
 section:not(#callToAction), footer {
     padding: 4em 0;
 }
 
 /* Header */
-header{
+header {
     width: 100%;
     padding: 1em 0;
-    background-color:   rgba(255,255,255,0.5);
+    background-color: rgba(255,255,255,0.5);
     position: sticky;
     top: 0;
-    backdrop-filter:  blur(5px);
+    backdrop-filter: blur(5px);
     box-shadow: 0 0 3px rgba(0,0,0,0.3);
-    
+    z-index: 100;
 }
 
-header .container
-{
+header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
 }
 
-header  ul{
+header ul {
     display: flex;
     gap: 5em;
 }
 
-header a{
+header a {
     text-align: right;
 }
 
 /* Call To Action */
-#callToAction
-{
+#callToAction {
     background-image: url(../images/cover.jpg);
     background-size: cover;
     height: 1000px;
@@ -90,22 +75,20 @@ header a{
     align-items: center;
 }
 
-#cto
-{
+#cto {
     padding: 2em;
     background-color: white;
     border-radius: 5px;
     position: relative;
-    
 }
 
-#cto::before{
+#cto::before {
     width: 100%;
     height: 100%;
     content: "";
     position: absolute;
     left: 50%;
-    top: 50%;  
+    top: 50%;
     border-radius: 5px;
     border: 4px solid transparent;
     background: var(--gradient);
@@ -117,11 +100,9 @@ header a{
     transform: translate(-50%,-50%);
     opacity: 0;
     transition: 0.5s ease;
-
 }
 
-#mask
-{
+#mask {
     position: absolute;
     top: 0;
     left: 0;
@@ -131,107 +112,75 @@ header a{
     background-color: rgba(0,0,0,0.3);
     mask: radial-gradient(
         circle at var(--mouse-x) var(--mouse-y),
-        transparent 30px, 
-        rgba(0,0,0, 0.3) 60px
+        transparent 30px,
+        rgba(0,0,0,0.3) 60px
     );
     z-index: 2;
     opacity: 0;
 }
 
-
-#cto:hover::before{
+#cto:hover::before {
     opacity: 1;
 }
 
-#cto:hover #mask
-{
+#cto:hover #mask {
     opacity: 1;
 }
-#cto:hover 
-{
+
+#cto:hover {
     transform: scale(1.05);
 }
-/* Map Attraction */
-/* Map markers: Relative */
-/* marker: Absolute */
 
-.focus, .attractionCard:hover, .eventsCard figure:hover
-{
-    transform: scale(1.05);
-    box-shadow: 0 5px 5px rgba(0,0,0,0.3);
-    transition: transform 0.3s ease-in-out;
-    overflow: hidden;
-}
+/* Map Attractions */
+.map { margin-bottom: 3em; }
 
+.map h2 { font-size: 3em; padding: 1em; }
 
-.attractionCard:hover::before, .eventsCard figure:hover::before
-{
-    content: "";
-    position: absolute;
-    top: -10%;
-    left: -60%;
-    width: 50%;
-    height: 120%;
-    background: linear-gradient(0deg,rgba(255,255,255,0) 0%,rgba(255,255,255,0.48) 35%, rgba(255,255,255,0.90) 80%);
-    transform: rotate(15deg);
-    animation: shine 0.4s ease-in-out;
-}
-
-@keyframes shine {
-    from 
-    {
-        left: -70%;
-    }
-    to
-    {
-        left: 100%;
-    }
-}
-
-
-#mapAttractions
-{
-    padding: 4em;
-}
-
-#mapAttractions h2{
-    padding-bottom: 2em;
-}
-
-#mapAttractions .container
-{
-    background-image: url(../images/lyon-map-low-res.jpg);
-    height: 600px;
-    display: flex;
-    
-}
-
-.container #cards,.mapMarkers
-{
-    width: 50%;
-}
-
-#cards
-{
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    gap: 2em;
-    padding: 2em 0 2em 2em;
-}
-
-#cards .attractionCard
-{
-    background-color: white;
-    padding: 1em;
-}
-
-.mapMarkers
-{
+.map .container {
     position: relative;
 }
 
-.mapMarkers .marker
-{
+.map .container > img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.map .attractions {
+    position: absolute;
+    top: 50%;
+    left: 1em;
+    transform: translateY(-50%);
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    justify-content: space-around;
+}
+
+.map .attractions .attractionCard {
+    width: 45%;
+    text-align: center;
+    background: white;
+    border: 1px solid #ccc;
+    padding: 5px;
+}
+
+.map .attractions .attractionCard img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.map .mapMarkers {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.mapMarkers .marker {
     background-color: red;
     width: 30px;
     height: 30px;
@@ -243,61 +192,53 @@ header a{
     align-items: center;
 }
 
-
-.mapMarkers span{
+.mapMarkers span {
     display: block;
     transform: rotate(45deg);
-   
 }
 
-
-
-
-.mapMarkers .marker:nth-child(1)
-{   
-
-    top: 80%;
-    left: 20%;
-}
-.mapMarkers .marker:nth-child(2)
-{   
-
-    top: 90%;
-    left: 70%;
-}
-.mapMarkers .marker:nth-child(3)
-{   
-
-    top: 10%;
-    left: 90%;
+.focus, .attractionCard:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 5px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease-in-out;
+    overflow: hidden;
+    position: relative;
 }
 
+.attractionCard:hover::before {
+    content: "";
+    position: absolute;
+    top: -10%;
+    left: -60%;
+    width: 50%;
+    height: 120%;
+    background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.48) 35%, rgba(255,255,255,0.90) 80%);
+    transform: rotate(15deg);
+    animation: shine 0.4s ease-in-out;
+}
 
+@keyframes shine {
+    from { left: -70%; }
+    to { left: 100%; }
+}
 
-
-/*Essential and Information*/
-
-#essentialNevents
-{
+/* Essential and Latest Events */
+#essentialNevents {
     padding: 4em;
     display: flex;
-    
 }
-/* Dont forget this  */
-#essentialNevents .essentialInfo, .latestEvents
-{
+
+#essentialNevents .essentialInfo, .latestEvents {
     width: 50%;
 }
 
-#essentialNevents .essentialInfo
-{
+#essentialNevents .essentialInfo {
     display: flex;
     flex-direction: column;
     line-height: 2em;
 }
 
-#essentialNevents #readLoud
-{
+#essentialNevents #readLoud {
     background-color: rgb(50, 50, 243);
     color: white;
     padding: 1em;
@@ -306,27 +247,116 @@ header a{
     width: 200px;
 }
 
-
-.latestEvents .eventsCard
-{
+.latestEvents .eventsCard {
     display: flex;
     flex-direction: row;
     overflow-x: auto;
 }
 
-.eventsCard figure{
-     min-width: 300px;
-     padding: 1em;
-     border: 1px solid black;
-     background-color: white;
-     border-radius: 10px;
-     margin: 0.5em;
+.eventsCard figure {
+    min-width: 300px;
+    padding: 1em;
+    border: 1px solid black;
+    background-color: white;
+    border-radius: 10px;
+    margin: 0.5em;
 }
 
 /* Other Info */
-#otherInfo
-{
+#otherInfo {
     padding: 4em;
+}
+
+/* Reviews */
+.review_controls {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    margin: 1em 0.5em;
+}
+
+.review_controls button {
+    border: 0;
+    background: rgb(174,174,174);
+    padding: 0.5em 1em;
+    border-radius: 999px;
+}
+
+.review_controls button:hover {
+    background-color: rgb(27,129,239);
+    cursor: pointer;
+}
+
+.review_controls button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+#review_slides {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+    margin-top: 2em;
+}
+
+.review_card {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 330px;
+    padding: 1.5em;
+    margin-top: 1em;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    background: white;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.05);
+    transition: transform 0.35s ease, opacity 0.35s ease;
+}
+
+.review_rating {
+    font-size: 1.5em;
+    margin-top: 0.5em;
+    text-align: center;
+}
+
+.review_content {
+    font-size: 1em;
+    line-height: 1.5;
+    margin-bottom: 1em;
+    font-style: italic;
+}
+
+.review_author {
+    font-weight: 600;
+    font-size: 0.95em;
+    opacity: 0.8;
+    text-align: right;
+}
+
+.review_card.is-center {
+    transform: translateX(-50%) scale(1.10);
+    opacity: 1;
+    z-index: 2;
+}
+
+.review_card.is-left {
+    transform: translateX(calc(-50% - 360px)) scale(0.9);
+    opacity: 0.6;
+    filter: grayscale(0.2);
+    z-index: 1;
+}
+
+.review_card.is-right {
+    transform: translateX(calc(-50% + 360px)) scale(0.9);
+    opacity: 0.6;
+    filter: grayscale(0.2);
+    z-index: 1;
+}
+
+.review_card.is-hidden {
+    opacity: 0;
+    transform: translateX(-50%) scale(0.85);
+    pointer-events: none;
 }
 
 /* Contact Form */
@@ -334,7 +364,7 @@ header a{
     border: 1px solid gray;
     background: white;
     width: 300px;
-    padding: 1em 1em;
+    padding: 1em;
     margin: auto;
     position: relative;
     z-index: 5;
@@ -352,42 +382,35 @@ header a{
 }
 
 /* Footer */
-
-footer
-{   
-    border-top: 1px solid  rgb(129, 129, 129);
+footer {
+    border-top: 1px solid rgb(129,129,129);
     padding: 4em;
-    background-color: rgb(177, 175, 175);
+    background-color: rgb(177,175,175);
 }
 
-footer a{
-    color: rgb(82, 80, 80);
+footer a {
+    color: rgb(82,80,80);
     line-height: 2em;
 }
 
-footer nav
-{
+footer nav {
     display: flex;
     gap: 2em;
     justify-content: space-between;
 }
 
-
-footer p{
+footer p {
     text-align: center;
 }
 
-/* CSS EFFECTS */
-
-:root
-{
+/* CSS Variables */
+:root {
     --gradient: conic-gradient(
         from 0deg at 17% -2%,
         #ff5a00ff 100%,
         #fab691ff 75%,
         #e8f647ff 40%
     );
-
     --mouse-x: 50%;
     --mouse-y: 50%;
     --start: 0;

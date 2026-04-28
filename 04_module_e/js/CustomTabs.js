@@ -22,22 +22,32 @@ class CustomTabs extends HTMLElement {
                     cursor: pointer;
                     padding: 1em 2em;
                     flex: 1;
+                    height: 2em;
+                    border-radius: 5px;
                 }
-                ::slotted(.tab:hover),
+                ::slotted(.tab:hover)
+                {
+                    background-color: gray;
+                }
                 ::slotted(.tab.active){
-                    background-color: #c2c1c1;
+                     background-color: blue;
+                    color: white;
                 }
                 ::slotted(.tab-content){
                     display: none;
                     padding: 3em;
                     border: 1px solid #ccc;
                     border-top: none;
+                    height: 10em;
+                    border-radius: 5px;
+
+                   
                     
                 }
                 ::slotted(.tab-content.active){
-                    display: block
-            
-                
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
                 }
 
                 
