@@ -4,25 +4,12 @@
     box-sizing: border-box;
 }
 
-h2 {
-    text-align: center;
-}
+h2 { text-align: center; }
+h1 { font-size: 1em; }
+li { list-style-type: none; }
+a { text-decoration: none; }
 
-h1 {
-    font-size: 1em;
-}
-
-li {
-    list-style-type: none;
-}
-
-a {
-    text-decoration: none;
-}
-
-body {
-    font-family: Arial, Helvetica, sans-serif;
-}
+body { font-family: Arial, Helvetica, sans-serif; }
 
 .container {
     width: 80%;
@@ -61,10 +48,6 @@ header ul {
     gap: 5em;
 }
 
-header a {
-    text-align: right;
-}
-
 /* Call To Action */
 #callToAction {
     background-image: url(../images/cover.jpg);
@@ -83,9 +66,9 @@ header a {
 }
 
 #cto::before {
+    content: "";
     width: 100%;
     height: 100%;
-    content: "";
     position: absolute;
     left: 50%;
     top: 50%;
@@ -93,8 +76,7 @@ header a {
     border: 4px solid transparent;
     background: var(--gradient);
     background-attachment: fixed;
-    mask: linear-gradient(#0000,#0000), conic-gradient(from calc((
-        var(--start) - (20*1.1)) * 1deg), rgba(255, 255, 255, 0.122) 0deg,white,rgba(255, 255, 255, 0) 100deg);
+    mask: linear-gradient(#0000,#0000), conic-gradient(from calc((var(--start) - (20*1.1)) * 1deg), rgba(255,255,255,0.122) 0deg, white, rgba(255,255,255,0) 100deg);
     mask-composite: intersect;
     mask-clip: padding-box, border-box;
     transform: translate(-50%,-50%);
@@ -110,35 +92,20 @@ header a {
     height: 100%;
     border-radius: 5px;
     background-color: rgba(0,0,0,0.3);
-    mask: radial-gradient(
-        circle at var(--mouse-x) var(--mouse-y),
-        transparent 30px,
-        rgba(0,0,0,0.3) 60px
-    );
+    mask: radial-gradient(circle at var(--mouse-x) var(--mouse-y), transparent 30px, rgba(0,0,0,0.3) 60px);
     z-index: 2;
     opacity: 0;
 }
 
-#cto:hover::before {
-    opacity: 1;
-}
-
-#cto:hover #mask {
-    opacity: 1;
-}
-
-#cto:hover {
-    transform: scale(1.05);
-}
+#cto:hover { transform: scale(1.05); }
+#cto:hover::before { opacity: 1; }
+#cto:hover #mask { opacity: 1; }
 
 /* Map Attractions */
 .map { margin-bottom: 3em; }
-
 .map h2 { font-size: 3em; padding: 1em; }
 
-.map .container {
-    position: relative;
-}
+.map .container { position: relative; }
 
 .map .container > img {
     width: 100%;
@@ -190,6 +157,8 @@ header a {
     display: flex;
     justify-content: center;
     align-items: center;
+    pointer-events: all; 
+    cursor: pointer;
 }
 
 .mapMarkers span {
@@ -197,7 +166,8 @@ header a {
     transform: rotate(45deg);
 }
 
-.focus, .attractionCard:hover {
+/* Hover Effects */
+.focus, .attractionCard:hover, .eventsCard figure:hover {
     transform: scale(1.05);
     box-shadow: 0 5px 5px rgba(0,0,0,0.3);
     transition: transform 0.3s ease-in-out;
@@ -205,7 +175,7 @@ header a {
     position: relative;
 }
 
-.attractionCard:hover::before {
+.attractionCard:hover::before, .eventsCard figure:hover::before {
     content: "";
     position: absolute;
     top: -10%;
@@ -249,7 +219,6 @@ header a {
 
 .latestEvents .eventsCard {
     display: flex;
-    flex-direction: row;
     overflow-x: auto;
 }
 
@@ -263,9 +232,7 @@ header a {
 }
 
 /* Other Info */
-#otherInfo {
-    padding: 4em;
-}
+#otherInfo { padding: 4em; }
 
 /* Reviews */
 .review_controls {
@@ -282,15 +249,8 @@ header a {
     border-radius: 999px;
 }
 
-.review_controls button:hover {
-    background-color: rgb(27,129,239);
-    cursor: pointer;
-}
-
-.review_controls button:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-}
+.review_controls button:hover { background-color: rgb(27,129,239); cursor: pointer; }
+.review_controls button:disabled { opacity: 0.5; cursor: not-allowed; }
 
 #review_slides {
     position: relative;
@@ -313,53 +273,112 @@ header a {
     transition: transform 0.35s ease, opacity 0.35s ease;
 }
 
-.review_rating {
-    font-size: 1.5em;
-    margin-top: 0.5em;
+.review_rating { font-size: 1.5em; margin-top: 0.5em; text-align: center; }
+.review_content { font-size: 1em; line-height: 1.5; margin-bottom: 1em; font-style: italic; }
+.review_author { font-weight: 600; font-size: 0.95em; opacity: 0.8; text-align: right; }
+
+.review_card.is-center { transform: translateX(-50%) scale(1.10); opacity: 1; z-index: 2; }
+.review_card.is-left { transform: translateX(calc(-50% - 360px)) scale(0.9); opacity: 0.6; filter: grayscale(0.2); z-index: 1; }
+.review_card.is-right { transform: translateX(calc(-50% + 360px)) scale(0.9); opacity: 0.6; filter: grayscale(0.2); z-index: 1; }
+.review_card.is-hidden { opacity: 0; transform: translateX(-50%) scale(0.85); pointer-events: none; }
+
+
+/* Competition Colors */
+#coupon-event {
     text-align: center;
+    padding: 30px;
+    border: 2px solid lightgray;
+    border-radius: 12px;
+    max-width: 700px;
+    margin: 20px auto;
+}
+#coupon-event h2, p {
+    padding: 10px;
+    margin: 0;
 }
 
-.review_content {
-    font-size: 1em;
-    line-height: 1.5;
-    margin-bottom: 1em;
-    font-style: italic;
+#coupon-event #result.win-hundred,
+#coupon-event #result.win-ten,
+#coupon-event #result.no-prize {
+    border-color: silver;
 }
 
-.review_author {
-    font-weight: 600;
-    font-size: 0.95em;
-    opacity: 0.8;
-    text-align: right;
+#coupon-event #result {
+    width: 50%;
+    height: 45px;
+    line-height: 45px; 
+    margin: 0 auto 20px; 
+    border: 2px solid transparent;
+    border-radius: 8px;
+    font-weight: bold;
+    text-align: center; 
+    box-sizing: border-box; 
+}
+/* Combined result states for brevity */
+#coupon-event #result :is(.win-hundred, .win-ten, .no-prize) {
+    border-color: silver;
 }
 
-.review_card.is-center {
-    transform: translateX(-50%) scale(1.10);
-    opacity: 1;
-    z-index: 2;
+#coupon-event .cards {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding: 10px; /* Added padding */
 }
 
-.review_card.is-left {
-    transform: translateX(calc(-50% - 360px)) scale(0.9);
-    opacity: 0.6;
-    filter: grayscale(0.2);
-    z-index: 1;
+#coupon-event .card {
+    width: 80px;
+    height: 110px;
+    background: royalblue;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s;
+    padding: 5px; /* Added padding */
 }
 
-.review_card.is-right {
-    transform: translateX(calc(-50% + 360px)) scale(0.9);
-    opacity: 0.6;
-    filter: grayscale(0.2);
-    z-index: 1;
+#coupon-event .card::after {
+    content: '?';
+    color: white;
+    font-size: 2rem;
 }
 
-.review_card.is-hidden {
-    opacity: 0;
-    transform: translateX(-50%) scale(0.85);
+#coupon-event .card:hover {
+    transform: scale(1.05);
+    background: blue;
+}
+
+#coupon-event .card.off {
+    opacity: 0.2;
     pointer-events: none;
 }
 
-/* Contact Form */
+#coupon-event #restart {
+    display: block; /* Ensures margin auto works effectively */
+    width: 50%;
+    padding: 12px;
+    cursor: pointer;
+    border: 2px solid black;
+    background: white;
+    font-weight: bold;
+    border-radius: 6px;
+    margin: 0 auto;
+}
+
+#coupon-event #restart.highlight {
+    background: black;
+    color: white;
+}
+
+#coupon-event #restart:disabled {
+    border-color: lightgray;
+    color: lightgray;
+    cursor: not-allowed;
+}
+
 #contactForm h2 {
     border: 1px solid gray;
     background: white;
@@ -384,33 +403,22 @@ header a {
 /* Footer */
 footer {
     border-top: 1px solid rgb(129,129,129);
-    padding: 4em;
+    padding: 4em 4em 2em 4em; 
     background-color: rgb(177,175,175);
 }
 
-footer a {
-    color: rgb(82,80,80);
-    line-height: 2em;
+footer p { 
+    text-align: center; 
+    margin-top: 2em; 
 }
 
-footer nav {
-    display: flex;
-    gap: 2em;
-    justify-content: space-between;
-}
+footer a { color: rgb(82,80,80); line-height: 2em; }
+footer nav { display: flex; gap: 2em; justify-content: space-between; }
 
-footer p {
-    text-align: center;
-}
 
 /* CSS Variables */
 :root {
-    --gradient: conic-gradient(
-        from 0deg at 17% -2%,
-        #ff5a00ff 100%,
-        #fab691ff 75%,
-        #e8f647ff 40%
-    );
+    --gradient: conic-gradient(from 0deg at 17% -2%, #ff5a00ff 100%, #fab691ff 75%, #e8f647ff 40%);
     --mouse-x: 50%;
     --mouse-y: 50%;
     --start: 0;
