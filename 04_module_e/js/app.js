@@ -160,63 +160,32 @@ function bindReviewControls() {
         }
     });
 } 
-
 function couponGame() {
-    const result = document.getElementById("result");
-    const cards = document.querySelectorAll(".card");
-    const restartBtn = document.getElementById("restart");
+  const res = document.getElementById("result");
+  const draw = document.getElementById("draw-btn");
+  const re = document.getElementById("restart");
 
-    if (!result || !cards.length || !restartBtn) return;
+  draw.onclick = () => {
+    // Everything happens in one "tick"
+    const rand = Math.floor(Math.random() * 3) + 1;
+    const prizes = { 1: "10% Discount Coupon!", 2: "No prize!", 3: "100% Discount Coupon!" };
 
-    let played = false;
+    res.textContent = prizes[rand];
+    res.className = "active";
+    
+    draw.disabled = true;
+    re.disabled = false;
+    re.classList.add("highlight");
+  };
 
-    function getRandomResult() {
-        const random = Math.random();
-        if (random < 0.1) {
-            return { text: "100% Discount Coupon!", class: "win-hundred" };
-        } else if (random < 0.4) {
-            return { text: "10% Discount Coupon!", class: "win-ten" };
-        } else {
-            return { text: "No prize!", class: "no-prize" };
-        }
-    }
-
-    cards.forEach(card => {
-        card.addEventListener("click", () => {
-            if (played) return;
-
-            const reward = getRandomResult();
-
-            result.textContent = reward.text;
-            result.className = reward.class;
-
-            played = true;
-            restartBtn.disabled = false;
-            
-            // Highlight the restart button specifically
-            restartBtn.classList.add("highlight");
-        
-
-            cards.forEach(card => card.classList.add("off"));
-        });
-    });
-
-    restartBtn.addEventListener("click", () => {
-        result.textContent = "";
-        result.className = "";
-        played = false;
-
-        cards.forEach(card => card.classList.remove("off"));
-        restartBtn.disabled = true;
-        
-   
-        restartBtn.classList.remove("highlight");
-        restartBtn.textContent = "Restart";
-    });
+  re.onclick = () => {
+    res.textContent = "";
+    res.className = "";
+    draw.disabled = false;
+    re.disabled = true;
+    re.classList.remove("highlight");
+  };
 }
-
-
-
 
 
 

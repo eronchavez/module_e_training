@@ -25,6 +25,13 @@ section:not(#callToAction), footer {
     padding: 4em 0;
 }
 
+:root {
+    --gradient: conic-gradient(from 0deg at 17% -2%, #ff5a00ff 100%, #fab691ff 75%, #e8f647ff 40%);
+    --mouse-x: 50%;
+    --mouse-y: 50%;
+    --start: 0;
+}
+
 /* Header */
 header {
     width: 100%;
@@ -283,102 +290,80 @@ header ul {
 .review_card.is-hidden { opacity: 0; transform: translateX(-50%) scale(0.85); pointer-events: none; }
 
 
-/* Competition Colors */
+/* Coupon Event */
 #coupon-event {
-    text-align: center;
-    padding: 30px;
-    border: 2px solid lightgray;
-    border-radius: 12px;
-    max-width: 700px;
-    margin: 20px auto;
-}
-#coupon-event h2, p {
-    padding: 10px;
-    margin: 0;
-}
-
-#coupon-event #result.win-hundred,
-#coupon-event #result.win-ten,
-#coupon-event #result.no-prize {
-    border-color: silver;
+  display: flex;
+  flex-direction: column; 
+  align-items: center;    
+  padding: 30px;
+  border: 2px solid lightgray;
+  margin: 20px auto;
+  max-width: 700px;
+  text-align: center;
 }
 
 #coupon-event #result {
-    width: 50%;
-    height: 45px;
-    line-height: 45px; 
-    margin: 0 auto 20px; 
-    border: 2px solid transparent;
-    border-radius: 8px;
-    font-weight: bold;
-    text-align: center; 
-    box-sizing: border-box; 
-}
-/* Combined result states for brevity */
-#coupon-event #result :is(.win-hundred, .win-ten, .no-prize) {
-    border-color: silver;
+  height: 50px;
+  line-height: 50px;
+  margin: 15px 0;         
+  font-weight: bold;
+  width: 50%;
+  box-sizing: border-box; 
 }
 
-#coupon-event .cards {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 20px;
-    padding: 10px; /* Added padding */
+#coupon-event #result.active {
+  border: 2px solid silver;
 }
 
-#coupon-event .card {
-    width: 80px;
-    height: 110px;
-    background: royalblue;
-    border-radius: 8px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: 0.2s;
-    padding: 5px; /* Added padding */
+
+#draw-btn, #restart {
+  width: 50%;
+  padding: 12px;
+  margin: 5px 0;
+  font-weight: bold;
+  cursor: pointer;
 }
 
-#coupon-event .card::after {
-    content: '?';
-    color: white;
-    font-size: 2rem;
+#draw-btn, #restart {
+  width: 50%;
+  padding: 12px;
+  margin: 5px auto;
+  font-weight: bold;
+  cursor: pointer;
+  display: inline-block; 
 }
 
-#coupon-event .card:hover {
-    transform: scale(1.05);
-    background: blue;
+#draw-btn {
+  background: royalblue;
+  color: white;
+  border: none;
 }
 
-#coupon-event .card.off {
-    opacity: 0.2;
-    pointer-events: none;
+#draw-btn:hover {
+  background: blue;
 }
 
-#coupon-event #restart {
-    display: block; /* Ensures margin auto works effectively */
-    width: 50%;
-    padding: 12px;
-    cursor: pointer;
-    border: 2px solid black;
-    background: white;
-    font-weight: bold;
-    border-radius: 6px;
-    margin: 0 auto;
+#draw-btn:disabled {
+  background: #ccc;
 }
 
-#coupon-event #restart.highlight {
-    background: black;
-    color: white;
+#restart {
+  background: white;
+  border: 2px solid black;
 }
 
-#coupon-event #restart:disabled {
-    border-color: lightgray;
-    color: lightgray;
-    cursor: not-allowed;
+#restart.highlight {
+  background: black;
+  color: white;
 }
 
+#restart:disabled {
+  color: lightgray;
+  border-color: lightgray;
+}
+
+
+/* Contact */
 #contactForm h2 {
     border: 1px solid gray;
     background: white;
@@ -414,12 +399,3 @@ footer p {
 
 footer a { color: rgb(82,80,80); line-height: 2em; }
 footer nav { display: flex; gap: 2em; justify-content: space-between; }
-
-
-/* CSS Variables */
-:root {
-    --gradient: conic-gradient(from 0deg at 17% -2%, #ff5a00ff 100%, #fab691ff 75%, #e8f647ff 40%);
-    --mouse-x: 50%;
-    --mouse-y: 50%;
-    --start: 0;
-}
