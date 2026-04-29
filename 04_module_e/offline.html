@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lyon Tourist Guide | Offline</title>
+    <link rel="stylesheet" href="main/style.css">
+    <style>
+        body { background: #f7f8fb; }
+        .offline-message {
+            max-width: 640px;
+            margin: 2em auto;
+            text-align: center;
+            padding: 1em 1.5em;
+            background: #111;
+            color: #fff;
+            border-radius: 10px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>WELCOME LYON</h1>
+            <nav>
+                <ul>
+                    <li><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="offline-message">
+        You are currently in offline mode. Showing a minimal version of the site.
+    </div>
+    <section class="essentialInfoAndLatestEvents" id="essentialInfoAndLatestEvents">
+        <div class="container">
+            <section class="essentialInfo offline">
+                <h2>Essential Information</h2>
+                <address>
+                    <p>Contact: 04 72 10 30 30</p>
+                    <p>Address: Maire de Lyon, 69205 Lyon cedex 01</p>
+                    <a href="#" id="readLoudBtn">Read it Loud</a>
+                </address>
+            </section>
+        </div>
+    </section>
+    <script>
+        const goOnlinePage = () => {
+            if (navigator.onLine && !window.location.pathname.endsWith("index.html")) {
+                
+                window.location.replace("index.html");
+            }
+        };
+        window.addEventListener("online", goOnlinePage);
+        goOnlinePage();
+
+        // Read aloud functionality
+        document.getElementById('readLoudBtn').addEventListener('click', function(event) {
+            event.preventDefault();
+            const essentialInfo = `
+                Contact : 04 72 10 30 30.
+                Address : Maire de Lyon, 69205 Lyon cedex 01.
+            `;
+            const speech = new SpeechSynthesisUtterance(essentialInfo);
+            speech.lang = 'fr-FR';
+            window.speechSynthesis.speak(speech);
+        });
+    </script>
+</body>
+</html>

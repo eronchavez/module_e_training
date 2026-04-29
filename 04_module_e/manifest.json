@@ -1,0 +1,15 @@
+{
+  "name": "Lyon Tourist Guide",
+  "short_name": "Lyon Guide",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1b81ef",
+  "icons": [
+    {
+      "src": "images/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

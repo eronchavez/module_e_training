@@ -224,6 +224,11 @@ header ul {
     width: 200px;
 }
 
+.essentialInfo.offline{
+    width: 100%;
+    text-align: center !important;
+}
+
 .latestEvents .eventsCard {
     display: flex;
     overflow-x: auto;
@@ -399,3 +404,5 @@ footer p {
 
 footer a { color: rgb(82,80,80); line-height: 2em; }
 footer nav { display: flex; gap: 2em; justify-content: space-between; }
+
+

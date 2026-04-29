@@ -18,9 +18,7 @@ const observer = new IntersectionObserver((entries,observer) => {
     entries.forEach(entry=>{
         if(entry.isIntersecting)
         {
-
             entry.target.play();
-
         }
         else
         {
@@ -79,7 +77,7 @@ document.getElementById("readLoud").addEventListener('click', (e) => {
 });
 
 
-// Reviews
+// Reviews Logic
 
 let allReviews = [];
 let currentReviewIndex = 0;
@@ -160,34 +158,58 @@ function bindReviewControls() {
         }
     });
 } 
+
+
+// Coupon Game Event
 function couponGame() {
-  const res = document.getElementById("result");
+  const result = document.getElementById("result");
   const draw = document.getElementById("draw-btn");
-  const re = document.getElementById("restart");
+  const restart = document.getElementById("restart");
 
   draw.onclick = () => {
-    // Everything happens in one "tick"
+    // Generate a random number between 1 and 3
     const rand = Math.floor(Math.random() * 3) + 1;
-    const prizes = { 1: "10% Discount Coupon!", 2: "No prize!", 3: "100% Discount Coupon!" };
+    const prizes = { 
+      1: "10% Discount Coupon!", 
+      2: "No prize!", 
+      3: "100% Discount Coupon!" 
+    };
 
-    res.textContent = prizes[rand];
-    res.className = "active";
+    // Update text and classes
+    result.textContent = prizes[rand];
+    result.className = "active";
     
+    // Toggle button states
     draw.disabled = true;
-    re.disabled = false;
-    re.classList.add("highlight");
+    restart.disabled = false;
+    restart.classList.add("highlight");
   };
 
-  re.onclick = () => {
-    res.textContent = "";
-    res.className = "";
+  restart.onclick = () => {
+    // Reset the UI
+    result.textContent = "";
+    result.className = "";
+    
     draw.disabled = false;
-    re.disabled = true;
-    re.classList.remove("highlight");
+    restart.disabled = true;
+    restart.classList.remove("highlight");
   };
 }
 
-
+//Register the Service Worker
+if("serviceWorker" in navigator)
+{
+    window.addEventListener("load", async () => {
+        try
+        {
+            await navigator.serviceWorker.register("sw.js");
+            console.log("Service worker registered");
+        }catch(e)
+        {
+            console.error("SW registration failed", e);
+        }
+    });
+}
 
 
 
