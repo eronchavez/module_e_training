@@ -100,54 +100,100 @@ header ul
 
 /*Map Attraction*/
 
-
+/* 
 
 .map
 {
+        margin-bottom: 4em;
+        .container { position: relative; }
+        .container > img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+    .mapAttraction {
+        position: absolute;
+        top: 50%;
+        left: 1em;
+        transform: translateY(-50%);
+        width: 50%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1em;
+        justify-content: space-around;
+    }
+
+    .mapAttraction .attractionCard {
+        width: 45%;
+        text-align: center;
+        background: white;
+        border: 1px solid #ccc;
+        padding: 5px;
+    }
+    .mapAttraction .attractionCard img {
+        width: 100%;
+        object-fit: cover;
+    }
+    .mapMarkers {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+    }
+
+} */
+
+
+ .map
+{   
+    h2 {margin-bottom: 2em};
     margin-bottom: 4em;
-}
+    .container
+    {
+        position: relative;
+    }
+    .mapAttraction
+    {
+        position: absolute;
+        top: 50%;
+        left: 1em;
+        transform: translateY(-50%);
+        width: 50%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 1em;
+    }
 
-.map .container { position: relative; }
+    .mapAttraction .attractionCard
+    {
+        width: 45%;
+        text-align: center;
+        background-color: white;
+        border: 1px solid #ccc;
+        padding: 5px;
+    }
 
-.map .container > img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
+    .mapAttraction .attractionCard img 
+    {
+        width: 100%;
+        object-fit: cover;
+    }
 
-.map .mapAttraction {
-    position: absolute;
-    top: 50%;
-    left: 1em;
-    transform: translateY(-50%);
-    width: 50%;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1em;
-    justify-content: space-around;
-}
+    .mapMarkers
+    {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+    }
+   
 
-.map .mapAttraction .attractionCard {
-    width: 45%;
-    text-align: center;
-    background: white;
-    border: 1px solid #ccc;
-    padding: 5px;
-}
-
-.map .mapAttraction .attractionCard img {
-    width: 100%;
-    object-fit: cover;
-}
-
-.map .mapMarkers {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-}
+} 
 
 .mapMarkers .marker {
     background-color: rgb(221, 98, 98);
@@ -177,7 +223,7 @@ header ul
     position: relative;
 }
 
-.attractionCard:hover::before, .eventsCard figure:hover::before {
+.focus::before,.attractionCard:hover::before, .eventsCard figure:hover::before {
     content: "";
     position: absolute;
     top: -10%;
