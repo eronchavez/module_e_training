@@ -1,0 +1,296 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1
+{
+    font-size: 1em;
+}
+
+h2
+{
+    text-align: center;
+
+
+}
+
+
+
+li
+{
+    list-style-type: none;
+}
+
+a{
+ text-decoration: none;
+}
+
+.container
+{
+    width: 80%;
+    margin: 0 auto;
+
+}
+
+section:not(#callToAction), footer
+{
+    padding: 4em 0;
+}
+
+img,video
+{   
+    width: 100%;
+    height: auto;
+}
+
+header,footer
+{
+    width: 100%;
+}
+
+
+/* header */
+header
+{
+    background-color: rgba(255,255,255,0.5);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 3px rgba(0,0,0,0.3);
+    padding: 1em 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header .container
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+header ul
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5em;
+}
+
+/* Call To Action */
+
+#callToAction
+{
+    background: url(../images/cover.jpg);
+    background-size: cover;
+    height: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#cto
+{
+    padding: 2em;
+    background-color: white;
+    border-radius: 15px;
+}
+
+
+/*Map Attraction*/
+
+
+
+.map
+{
+    margin-bottom: 4em;
+}
+
+.map .container { position: relative; }
+
+.map .container > img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.map .mapAttraction {
+    position: absolute;
+    top: 50%;
+    left: 1em;
+    transform: translateY(-50%);
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    justify-content: space-around;
+}
+
+.map .mapAttraction .attractionCard {
+    width: 45%;
+    text-align: center;
+    background: white;
+    border: 1px solid #ccc;
+    padding: 5px;
+}
+
+.map .mapAttraction .attractionCard img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.map .mapMarkers {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.mapMarkers .marker {
+    background-color: rgb(221, 98, 98);
+    width: 30px;
+    height: 30px;
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(-45deg);
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: all; 
+    cursor: pointer;
+}
+
+.mapMarkers span {
+    display: block;
+    transform: rotate(45deg);
+}
+
+/* Hover Effects */
+.focus, .attractionCard:hover, .eventsCard figure:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 5px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease-in-out;
+    overflow: hidden;
+    position: relative;
+}
+
+.attractionCard:hover::before, .eventsCard figure:hover::before {
+    content: "";
+    position: absolute;
+    top: -10%;
+    left: -60%;
+    width: 50%;
+    height: 120%;
+    background: linear-gradient(0deg, rgba(255,255,255,0) 0%,
+     rgba(255,255,255,0.48) 35%, rgba(255,255,255,0.90) 80%);
+    transform: rotate(15deg);
+    animation: shine 0.4s ease-in-out;
+}
+
+@keyframes shine {
+    from { left: -70%; }
+    to { left: 100%; }
+}
+/* Essential Information */
+
+#essentialNevents
+{
+    padding: 4em;
+    display: flex;
+
+    > div 
+    {
+        width: 50%;
+    };
+
+    .essentialInfo
+    {
+        display: flex;
+        flex-direction: column;
+        line-height: 2em;
+    }
+
+    #readLoud
+    {
+        background-color: rgb(50, 50, 255);
+        color: white;
+        text-align: center;
+        border-radius: 5px;
+        width: 200px;
+        padding: 0.5em;
+    }
+
+    .eventsCard
+    {
+        display: flex;
+        overflow-x: auto;
+    }
+
+    .eventsCard figure
+    {
+        min-width: 300px;
+        padding: 1em;
+        border: 1px solid black;
+        border-radius: 10px;
+        margin: 0.5em;
+    }
+}
+
+
+
+
+
+/* Contact */
+
+#contactForm h2{
+    border: 1px solid gray;
+    background-color: white;
+    width: 300px;
+    padding: 1em;
+    margin: auto;
+    position: relative;
+    z-index: 5;
+    text-align: center;
+    top: 1.2em;
+}
+
+#contactForm form
+{
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr 3fr;
+    border: 1px solid gray;
+    line-height: 2em;
+    gap: 2em;
+    padding: 4em 2em 2em;
+} 
+
+
+/* footer */
+
+footer{
+    border-top: 1px solid gray;
+    padding: 4em 4em 2em 4em;
+    background-color: rgb(185, 179, 179);
+}
+
+
+footer p{
+    text-align: center;
+    margin-top: 2em;
+}
+
+footer a
+{
+    color: rgb(82, 80, 80);
+    line-height: 2em;
+}
+
+footer nav
+{
+    display: flex;
+    gap: 2em;
+    justify-content: space-between;
+}

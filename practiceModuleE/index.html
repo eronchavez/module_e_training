@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style/main.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1>WELCOME</h1>
+        <nav>
+          <ul>
+            <li><a href="">link</a></li>
+            <li><a href="">link</a></li>
+            <li><a href="">link</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section id="callToAction">
+        <div id="cto">
+          <div class="mask"></div>
+          Call to Action
+        </div>
+      </section>
+
+      <section class="map">
+        <h2>Map Attraction</h2>
+
+        <div class="container">
+          <img
+            srcset="
+              images/lyon-map.jpg         1280w,
+              images/lyon-map-low-res.jpg 2756w
+            "
+            alt="LYON MAP"
+            sizes="(max-width: 759px) 100vw, 100vw"
+          />
+
+          <div class="mapAttraction">
+            <figure class="attractionCard">
+              <picture>
+                <source media="(max-width: 759px)" srcset="images/attraction-a-low-res.jpg" />
+                <img src="images/Attraction-a.jpg" alt="Parc de la Tete d'Or" />
+              </picture>
+              <figcaption>Parc de la Tete d'Or</figcaption>
+            </figure>
+            <figure class="attractionCard">
+              <picture>
+                <source media="(max-width: 759px)" srcset="images/attraction-b-low-res.jpg" />
+                <img src="images/attraction-b.jpg" alt="Street" />
+              </picture>
+              <figcaption>Street</figcaption>
+            </figure>
+            <figure class="attractionCard">
+              <picture>
+                <source media="(max-width: 759px)" srcset="images/attraction-c-low-res.jpg" />
+                <img src="images/attraction-c.jpg" alt="River" />
+              </picture>
+              <figcaption>River</figcaption>
+            </figure>
+            <figure class="attractionCard">
+              <picture>
+                <source media="(max-width: 759px)" srcset="images/all-attractions-low-res.jpg" />
+                <img src="images/all-attractions.jpg" alt="All Attraction" />
+              </picture>
+              <figcaption>All Attractions</figcaption>
+            </figure>
+          
+          </div>
+
+          <div class="mapMarkers">
+           <div class="marker" style="top: 20%; left: 85%;"><span>A</span></div>
+            <div class="marker" style="top: 50%; left: 60%;"><span>B</span></div>
+            <div class="marker" style="top: 70%; left: 75%;"><span>C</span></div>
+          </div>
+        </div>
+      </section>
+
+      <video src="videos/lyon.mp4" controls></video>
+
+   <section id="essentialNevents" class="container">
+  <div class="essentialInfo">
+    <h2>Essential <br> Information</h2>
+    <address>
+      <p>Contact: 04 72 10 30 30</p>
+      <p>Address: Mairie de Lyon, 69205 Lyon cedex 01</p>
+    </address>
+    <a href="" id="readLoud">Read it Loud</a>
+  </div>
+
+  <div class="latestEvents">
+      <h2>Latest Events</h2>
+      <div class="eventsCard">
+
+        <figure>
+          <picture>
+            <source
+              media="(max-width: 759px)"
+              srcset="latest-events-images/worldskills-2024-p-low-res.png"
+            />
+            <img
+              src="latest-events-images/worldskills-2024-p.jpg"
+              alt="Lyon accueille la finale mondiale des Worldskills 2024"
+            />
+          </picture>
+          <figcaption>Lyon accueille la finale mondiale des Worldskills 2024</figcaption>
+        </figure>
+
+        <figure>
+          <picture>
+            <source
+              media="(max-width: 759px)"
+              srcset="latest-events-images/fda-p-low-res.jpg"
+            />
+            <img
+              src="latest-events-images/fda-p.jpg"
+              alt="Forum des associations 2024"
+            />
+          </picture>
+          <figcaption>Forum des associations 2024</figcaption>
+        </figure>
+
+        <figure>
+          <picture>
+            <source
+              media="(max-width: 759px)"
+              srcset="latest-events-images/lyon-kayak-p-0-low-res.jpg"
+            />
+            <img
+              src="latest-events-images/lyon-kayak-p-0.jpg"
+              alt="Lyon Kayak"
+            />
+          </picture>
+          <figcaption>Lyon Kayak</figcaption>
+        </figure>
+
+        <figure>
+          <picture>
+            <source
+              media="(max-width: 759px)"
+              srcset="latest-events-images/semaine-bleue-2024-p-low-res.jpg"
+            />
+            <img
+              src="latest-events-images/semaine-bleue-2024-p.jpg"
+              alt="La semaine bleue 2024"
+            />
+          </picture>
+          <figcaption>La semaine bleue 2024</figcaption>
+        </figure>
+
+        <figure>
+          <picture>
+            <source
+              media="(max-width: 759px)"
+              srcset="latest-events-images/village-des-metiers-p-low-res.jpg"
+            />
+            <img
+              src="latest-events-images/village-des-metiers-p.jpg"
+              alt="Le Village des Métiers"
+            />
+          </picture>
+          <figcaption>Le Village des Métiers</figcaption>
+        </figure>
+
+        <figure>
+          <picture>
+            <source
+              media="(max-width: 759px)"
+              srcset="latest-events-images/journees_portes_ouvertes_entreprises_2023_p-low-res.jpg"
+            />
+            <img
+              src="latest-events-images/journees_portes_ouvertes_entreprises_2023_p.jpg"
+              alt="Les Journées Portes Ouvertes des Entreprises"
+            />
+          </picture>
+          <figcaption>Les Journées Portes Ouvertes des Entreprises</figcaption>
+        </figure>
+
+      </div>
+    </div>
+  </section>
+
+      <section id="otherInfo" class="container">
+        <h2>Other Information</h2>
+
+        <custom-tab>
+          <button id="tab-1" slot="tab">Tab 1</button>
+          <button id="tab-2" slot="tab">Tab 2</button>
+          <button id="tab-3" slot="tab">Tab 3</button>
+
+          <div id="content-1" slot="content" aria-labelledby="content-1">
+            This is the content for Tab 1
+          </div>
+          <div id="content-2" slot="content" aria-labelledby="content-2">
+            This is the content for Tab 2
+          </div>
+          <div id="content-3" slot="content" aria-labelledby="content-3">
+            This is the content for Tab 3
+          </div>
+        </custom-tab>
+      </section>
+
+      <section id="reviews" class="container">
+        <h2>Reviews</h2>
+
+        <div class="reviewSlide"></div>
+        <div class="reviewControl">
+          <button id="prevBtn">Prev Button</button>
+          <button id="nextBtn">Next Button</button>
+        </div>
+      </section>
+
+
+    <section id="couponEvent" class="container">
+        <h2>Coupon event</h2>
+        <p>Draw your coupon to reveal prize</p>
+        <div class="result"></div>
+        <button id="drawBtn">Draw Coupon</button>
+        <button id="restart" disabled="disabled">restart</button>
+    </section>
+
+    <section id="contactForm" class="container">
+        <h2>Contact Us</h2>
+        <form action="" method="post">
+          <label for="firstName">First Name: </label>
+          <input type="text" name="firstName" id="firstName" />
+
+          <label for="lastName">Last Name: </label>
+          <input type="text" name="lastName" id="lastName" />
+
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" />
+
+          <label for="phone">Phone</label>
+          <input type="tel" name="phone" id="phone" />
+        </form>
+      </section>
+
+
+    </main>
+
+
+    <footer>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="">About Us</a></li>
+                    <li><a href="">Getting Here</a></li>
+                    <li><a href="">FAQs</a></li>
+                </ul>
+                <ul>
+                    <li><a href="">Places To Stay</a></li>
+                    <li><a href="">Things to Do</a></li>
+                    <li><a href="">Events Calendar</a></li>
+                </ul>
+                <ul>
+                    <li><a href="">Restaurants</a></li>
+                    <li><a href="">Nightlife</a></li>
+                    <li><a href="">Shopping</a></li>
+                </ul>
+                <ul>
+                    <li><a href="">Plan Your Trip</a></li>
+                    <li><a href="">Contact Us</a></li>
+                    <li><a href="">Newsletter SignUp</a></li>
+                </ul>
+            </nav>
+            <p>&copy;Aaron James</p>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>
