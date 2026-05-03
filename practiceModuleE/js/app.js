@@ -1,8 +1,6 @@
-// Map hover
-
+// Map Markers
 let markers = document.querySelectorAll(".marker");
 let attractionCard = document.querySelectorAll(".attractionCard");
-
 
 markers.forEach((marker,index) => {
     marker.addEventListener("mouseover", () => {
@@ -11,5 +9,6 @@ markers.forEach((marker,index) => {
     marker.addEventListener("mouseout", () => {
         attractionCard[index].classList.remove("focus");
     });
-});
 
+
+});

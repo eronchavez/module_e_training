@@ -140,19 +140,7 @@ header ul {
     padding: 5px;
 }
 
-.map .attractions .attractionCard img {
-    width: 100%;
-    object-fit: cover;
-}
 
-.map .mapMarkers {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-}
 
 .mapMarkers .marker {
     background-color: red;
