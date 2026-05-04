@@ -247,6 +247,80 @@ header ul
     }
 }
 
+
+/* Coupon Event */
+#couponEvent{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    padding:1.5em;
+    margin:1.5em auto;
+    max-width:700px;
+    border:2px solid lightgray;
+    gap:1.5em;
+}
+
+#result{
+    width:50%;
+    height:50px;
+    line-height:50px;
+    font-weight:bold;
+    box-sizing:border-box;
+}
+
+#result.active{
+    border:2px solid silver;
+}
+
+#drawBtn,
+#restart{
+    width:50%;
+    padding:1.5em;
+    font-weight:bold;
+    cursor:pointer;
+    display:block;
+}
+
+#drawBtn{
+    background:royalblue;
+    color:#fff;
+    border:none;
+}
+
+#drawBtn:hover{
+    background:blue;
+}
+
+#drawBtn:disabled{
+    background:#ccc;
+    color:black;
+}
+
+#restart{
+    background:#fff;
+    border:2px solid black;
+}
+
+#restart.highlight{
+    background:black;
+    color:#fff;
+}
+
+#restart:disabled{
+    color:lightgray;
+    border-color:lightgray;
+}
+
+#drawBtn,
+#restart{
+    transition: transform .2s ease;
+}
+
+#drawBtn:hover,
+#restart:hover{
+    transform: scale(1.05);
+}
 /* Contact  Us  */
 #contactForm h2 
 {

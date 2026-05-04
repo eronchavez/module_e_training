@@ -32,21 +32,21 @@ if(video)
 {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            if(entry.isIntersecting)
-            {
+            if(entry.isIntersecting){
                 entry.target.play();
             }else{
                 entry.target.pause();
             }
         });
-    },{
+    },
+    {
         threshold: 0.5
     });
 
     observer.observe(video);
 
-    document.addEventListener("visibilitychange", ()=> {
-        if(document.visibilityState === 'hidden')
+    document.addEventListener("visibilitychange", () => {
+        if(document.visibilityState === "hidden")
         {
             video.pause();
         }else{
@@ -54,3 +54,41 @@ if(video)
         }
     });
 }
+
+// Coupon Game Event
+function couponGame()
+{
+    //Target the elements from HTML
+    const result = document.getElementById("result");
+    const draw = document.getElementById("drawBtn");
+    const restart = document.getElementById("restart");
+    //When user click the draw btn
+    draw.onclick = () => {
+        const rand = Math.floor(Math.random() * 3) + 1;
+        const prizes = {
+            1: "10% Discount Coupon!",
+            2: "No Prize!",
+            3:"100% Discount Coupon"
+        };
+
+            
+        result.textContent = prizes[rand];
+        result.className = "active";
+
+        draw.disabled = true;
+        restart.disabled = false;
+        restart.classList.add("highlight");
+    };
+
+    restart.onclick = () => {
+        result.textContent = "";
+        result.className = "";
+        
+        draw.disabled= false;
+        restart.disabled= true;
+        restart.classList.remove("highlight");
+    };
+
+}
+
+couponGame();
