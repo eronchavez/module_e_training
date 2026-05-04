@@ -249,78 +249,87 @@ header ul
 
 
 /* Coupon Event */
-#couponEvent{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    text-align:center;
-    padding:1.5em;
-    margin:1.5em auto;
-    max-width:700px;
-    border:2px solid lightgray;
-    gap:1.5em;
+#couponEvent
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5em;
+    margin: 1.5em auto;
+    padding: 1.5em;
+    max-width: 700px;
+    border: 2px solid lightgray;
 }
 
-#result{
-    width:50%;
-    height:50px;
-    line-height:50px;
-    font-weight:bold;
-    box-sizing:border-box;
+#result {
+    width: 50%;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    font-weight: bold;
 }
 
 #result.active{
-    border:2px solid silver;
+    border: 2px solid silver;
 }
 
-#drawBtn,
-#restart{
-    width:50%;
-    padding:1.5em;
-    font-weight:bold;
-    cursor:pointer;
-    display:block;
+#drawBtn, #restart
+{
+    width: 50%;
+    padding: 1.5em;
+    font-weight: bold;
+    cursor: pointer;
+    display: block;
 }
 
-#drawBtn{
-    background:royalblue;
-    color:#fff;
-    border:none;
+#drawBtn
+{
+    background-color: rgb(12, 50, 165);
+    color: rgb(255, 255, 255);
+    border: none;
 }
 
-#drawBtn:hover{
-    background:blue;
+#drawBtn:hover
+{
+    background-color: rgb(6, 6, 107);
 }
 
-#drawBtn:disabled{
-    background:#ccc;
-    color:black;
+#drawBtn:disabled
+{
+    background-color: #ccc;
+    color: white;
 }
 
-#restart{
-    background:#fff;
+#restart
+{
+    background-color: #fff;
     border:2px solid black;
 }
 
-#restart.highlight{
-    background:black;
-    color:#fff;
+#restart.highlight
+{
+    color: black;
+    background: #fff;
 }
 
-#restart:disabled{
-    color:lightgray;
-    border-color:lightgray;
+#restart:disabled
+{
+    background-color: lightgray;
+    border: 2px solid lightgray;
 }
 
-#drawBtn,
-#restart{
-    transition: transform .2s ease;
+#drawBtn, #restart
+{
+    transition: transform 0.3s ease-in-out;
 }
 
-#drawBtn:hover,
-#restart:hover{
+#drawBtn:hover, #restart:hover
+{
     transform: scale(1.05);
 }
+
+
 /* Contact  Us  */
 #contactForm h2 
 {
