@@ -26,12 +26,7 @@ section:not(#callToAction), footer {
 }
 
 :root{
-    --gradient: conic-gradient(
-        from 0deg at 17% -2%,
-        rgb(255, 90, 0) 100%,
-        rgb(250, 182, 145) 75%,
-        rgb(232, 246, 71) 40%
-    );
+    --gradient: conic-gradient(#ff4d00, #ff6a00, #ff8c00);
 
     --mouse-x: 50%;
     --mouse-y: 50%;
@@ -96,12 +91,12 @@ header ul {
     height:100%;
     transform:translate(-50%,-50%);
     mask:
-        linear-gradient(#0000,#0000),
+        linear-gradient(transparent,transparent),
         conic-gradient(
             from calc((var(--start) - 22) * 1deg),
             rgba(255,255,255,.12),
-            #fff,
-            #0000 100deg
+            white,
+            transparent 100deg
         );
     mask-composite:intersect;
     mask-clip:padding-box,border-box;
@@ -133,11 +128,7 @@ header ul {
 
 .map .container { position: relative; }
 
-.map .container > img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
+
 
 .map .attractions {
     position: absolute;
@@ -302,77 +293,66 @@ header ul {
 .review_card.is-hidden { opacity: 0; transform: translateX(-50%) scale(0.85); pointer-events: none; }
 
 
+
 /* Coupon Event */
-#coupon-event{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    text-align:center;
-    padding:1.5em;
-    margin:1.5em auto;
-    max-width:700px;
-    border:2px solid lightgray;
-    gap:1.5em;
+#coupon-event {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1.5em;
+    margin: 1.5em auto;
+    gap: 1em;
+    font-weight: bold;
+    border: 2px solid lightgray;
+    max-width: 700px;
 }
 
-#result{
-    width:50%;
-    height:50px;
-    line-height:50px;
-    font-weight:bold;
-    box-sizing:border-box;
+#result {
+    width: 50%;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-weight: bold;
 }
 
-#result.active{
-    border:2px solid silver;
+#result.active {
+    border: 2px solid silver;
 }
 
-#draw-btn,
-#restart{
-    width:50%;
-    padding:1.5em;
-    font-weight:bold;
-    cursor:pointer;
-    display:block;
+#draw-btn, #restart
+{
+    width: 50%;
+    padding: 1.5em;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    border: 2px solid lightgray;
 }
 
-#draw-btn{
-    background:royalblue;
-    color:#fff;
-    border:none;
+#draw-btn 
+{
+    background-color: royalblue;
+    color: white;
 }
 
-#draw-btn:hover{
-    background:blue;
+#draw-btn.highlight,#restart.highlight
+{
+    background-color: royalblue;
+    color: white;
+    border: none;
 }
 
-#draw-btn:disabled{
-    background:#ccc;
-    color:black;
+#draw-btn:disabled,#result:disabled
+{
+    background-color: white;
+    color: gray;
+    border: 2px solid lightgray;
 }
 
-#restart{
-    background:#fff;
-    border:2px solid black;
-}
-
-#restart.highlight{
-    background:black;
-    color:#fff;
-}
-
-#restart:disabled{
-    color:lightgray;
-    border-color:lightgray;
-}
-
-#draw-btn,
-#restart{
-    transition: transform .2s ease;
-}
-
-#draw-btn:hover,
-#restart:hover{
+#drawBtn:hover:not(#drawBtn:disabled), #restart:hover:not(#restart:disabled)
+{
     transform: scale(1.05);
 }
 
